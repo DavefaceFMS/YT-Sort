@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="utf-8">
+    <title>YouTube Playlist Sorter – Privacy & Terms</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.5; max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        h1, h2, h3 { margin-top: 1.5rem; }
+        a { color: #1155cc; }
+        header { border-bottom: 1px solid #ccc; margin-bottom: 1.5rem; padding-bottom: 0.75rem; }
+        footer { margin-top: 2rem; font-size: 0.9rem; color: #555; border-top: 1px solid #ccc; padding-top: 0.75rem; }
+        .nav { margin-top: 0.5rem; }
+        .nav a { margin-right: 1rem; }
+        .tag { display: inline-block; background: #eee; padding: 0.1rem 0.4rem; font-size: 0.8rem; border-radius: 3px; margin-left: 0.5rem; }
+        .section-note { font-size: 0.9rem; color: #555; }
+        code { background: #f5f5f5; padding: 0 0.2rem; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>YouTube Playlist Sorter <span class="tag">Personal tool</span></h1>
+    <p>A local desktop script that automatically sorts a single YouTube playlist by video duration.</p>
+    <div class="nav">
+        <a href="#privacy">Privacy policy</a>
+        <a href="#terms">Terms of service</a>
+        <a href="#youtube-data">YouTube &amp; Google data</a>
+    </div>
+</header>
+
+<section id="overview">
+    <h2>Overview</h2>
+    <p>
+        YouTube Playlist Sorter is a private Python script that runs on a single user’s Windows computer.
+        It uses the YouTube Data API to read the videos in one playlist on that user’s own channel and
+        then updates the ordering of that playlist based on each video’s duration.
+    </p>
+    <p>
+        This tool is not a public website, mobile app, or commercial service. It is used only by the
+        owner of the YouTube account that authorises it.
+    </p>
+</section>
+
+<section id="youtube-data">
+    <h2>YouTube Data API usage</h2>
+    <p>
+        This tool uses the YouTube Data API (v3) only for the following operations:
+    </p>
+    <p>
+        • Reading playlist items from one specified playlist (video IDs, titles, and durations).<br>
+        • Updating the <code>position</code> of playlist items in that playlist so that shorter videos appear first.
+    </p>
+    <p>
+        The tool does not upload videos, does not post comments, and does not access data from any other
+        YouTube channels or playlists.
+    </p>
+</section>
+
+<section id="privacy">
+    <h2>Privacy policy</h2>
+    <h3>Data accessed from YouTube</h3>
+    <p>
+        When you authorise the script with your Google account, it can access the following YouTube data
+        for the authorised account:
+    </p>
+    <p>
+        • Playlist item metadata for the selected playlist (video ID, title, current position, duration).<br>
+        • Your internal YouTube account identifier needed by the YouTube Data API to apply the changes.
+    </p>
+
+    <h3>How data is used</h3>
+    <p>
+        The script uses this data only to:
+    </p>
+    <p>
+        • Calculate the length of each video in the playlist.<br>
+        • Sort the playlist items by duration.<br>
+        • Send update requests to YouTube to change the playlist item positions accordingly.
+    </p>
+    <p>
+        The script does not profile users, perform analytics beyond ordering, or use the data for
+        advertising or marketing purposes.
+    </p>
+
+    <h3>Data storage and sharing</h3>
+    <p>
+        • OAuth access and refresh tokens are stored locally on the user’s own computer in a file such as <code>token.json</code>.<br>
+        • No YouTube data or tokens are transmitted to, or stored on, any third party server.<br>
+        • No data is shared with any third party organisation or individual.
+    </p>
+
+    <h3>Data retention and deletion</h3>
+    <p>
+        • The only persistent data created by the tool is the local OAuth token file on the user’s device and an optional local log file of operations.<br>
+        • To delete this data, the user can delete the token file and log file from their computer at any time.<br>
+        • The user can also revoke the script’s access to their account from the Google Account security page (“Third-party access” section).
+    </p>
+    <p class="section-note">
+        Revoking access and deleting local files removes the tool’s ability to read or modify any YouTube data.
+    </p>
+
+    <h3>Google and YouTube policies</h3>
+    <p>
+        This tool uses the YouTube Data API in accordance with the
+        <a href="https://developers.google.com/youtube/terms/api-services-terms-of-service" target="_blank" rel="noopener">
+            YouTube API Services Terms of Service
+        </a>
+        and the
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">
+            Google Privacy Policy
+        </a>.
+    </p>
+</section>
+
+<section id="terms">
+    <h2>Terms of service</h2>
+    <h3>Scope of use</h3>
+    <p>
+        • This tool is provided for personal use by the owner of the associated YouTube account.<br>
+        • It may only be used to manage playlists on accounts that you control and are authorised to administer.<br>
+        • You must comply with YouTube’s
+        <a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener">Terms of Service</a>
+        and all applicable laws when using this tool.
+    </p>
+
+    <h3>No warranties</h3>
+    <p>
+        The tool is provided “as is” with no warranties or guarantees of any kind. Use it at your own risk.
+        The author does not accept responsibility for any loss of data, playlist changes, or account
+        issues resulting from its use.
+    </p>
+
+    <h3>Rate limits and quotas</h3>
+    <p>
+        The tool calls the YouTube Data API subject to Google’s quota system. Excessive automated use
+        may result in YouTube throttling or rejecting requests. Users are responsible for configuring
+        the script so that it stays within their allocated API quota.
+    </p>
+
+    <h3>Contact</h3>
+    <p>
+        For questions about this tool or this policy, please contact the project owner using the contact
+        details associated with the relevant Google Cloud project or GitHub repository.
+    </p>
+</section>
+
+<footer>
+    <p>
+        This page describes a private script that runs locally on the user’s own device and uses the
+        YouTube Data API to manage a personal playlist. It does not represent an official Google or YouTube product.
+    </p>
+</footer>
+
+</body>
+</html>
